@@ -4,8 +4,11 @@ const Schema = mongoose.Schema;
 const ObjectId = mongoose.ObjectId
 
 const User = new Schema({
-    email : String,
-    password:String,
+    email: {
+        type: String,
+        unique: true // `email` must be unique
+      },
+    password : String,
     name: String
 })
 
